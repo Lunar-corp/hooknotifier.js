@@ -1,6 +1,4 @@
-> **This will be available on 2023, January 20th**
-
-Start to receive push notifications from your app to your phone.
+Receive push notifications from your app to your phone.
 
 - Lightweight ~8kB
 - No dependencies
