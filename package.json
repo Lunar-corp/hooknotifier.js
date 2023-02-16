@@ -1,6 +1,6 @@
 {
   "name": "hook.notifier",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Hook.Notifier is a push notification inbox, it allows you to receive push notifications from webhooks.",
   "main": "index.js",
   "scripts": {
