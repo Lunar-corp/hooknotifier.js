@@ -1,13 +1,14 @@
 {
   "name": "hook.notifier",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Hook.Notifier is a push notification inbox, it allows you to receive push notifications from webhooks.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "publishConfig": {
-    "@YOUR-USERNAME:registry": "https://npm.pkg.github.com"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Lunar-corp/hooknotifier.js.git"
   },
   "keywords": [
     "notification", "phone", "push notification", "webhooks", "zapier", "android", "ios"
