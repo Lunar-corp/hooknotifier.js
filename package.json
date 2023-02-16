@@ -1,0 +1,14 @@
+{
+  "name": "hook.notifier",
+  "version": "1.0.9",
+  "description": "HookNotifier is a push notification inbox, it allows you to receive push notifications from webhooks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "notification", "phone", "push notification", "webhooks", "zapier", "android", "ios"
+  ],
+  "author": "illuday",
+  "license": "MIT"
+}
