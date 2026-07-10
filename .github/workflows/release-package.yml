@@ -1,32 +1,38 @@
-name: Node.js Package
+name: CI & publish to npm
 
 on:
+  push:
+    branches: [master]
+  pull_request:
   release:
     types: [created]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
       - run: npm ci
+      - run: npm test
 
-  publish-gpr:
-    needs: build
+  publish:
+    if: github.event_name == 'release'
+    needs: test
     runs-on: ubuntu-latest
     permissions:
-      packages: write
       contents: read
+      # npm provenance: the package page shows it was built from this repo by CI.
+      id-token: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           registry-url: https://registry.npmjs.org
       - run: npm ci
-      - run: npm publish 
+      - run: npm publish --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
